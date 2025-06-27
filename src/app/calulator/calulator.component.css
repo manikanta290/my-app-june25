@@ -1,0 +1,19 @@
+div{
+  border-radius: 10px;
+  margin: 150px 0px 0px 300px;
+  color: #fff;
+}
+input{
+  margin: 10px;
+  width: 200px;
+  height: 20px;
+}
+
+button{
+  background-color: blue;
+  color: #fff;
+  width: 80px;
+  height: 25px;
+  margin: 20px;
+
+}

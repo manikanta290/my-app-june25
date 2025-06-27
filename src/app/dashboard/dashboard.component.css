@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+}
+.parent{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.left{
+  width: 20%;
+  height: 100%;
+  background-color: rgb(9, 157, 177);
+  color: white;
+  padding: 10px;
+  overflow: auto;
+
+}
+.right{
+  width: 80%;
+  height: 100%;
+  background-color: rgb(247, 152, 210);
+  overflow: auto;
+}
