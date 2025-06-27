@@ -4,6 +4,7 @@
 <h2 *ngIf="false">Good morning</h2>
 
 
+
 <!-- <ol>
   <li>Andhra Pradesh</li>
   <li>Telangana</li>
@@ -20,7 +21,10 @@
   <option *ngFor="let state of states">{{state}}</option>
 </select> -->
 
-
+<h4>{{date}}</h4>
+<h4>{{date | date}}</h4>
+<h4>{{date | date:'dd/MM/yyyy' }}</h4>
+<h4>{{date| date:'hh:mm:ss' }}</h4>
 
 <table class="table table-success">
   <thead>
@@ -38,3 +42,4 @@
     </tr>
   </tbody>
 </table>
+

@@ -18,6 +18,11 @@ products:any[]=[
   {productName:'Laptop',price:150000,rating:4.0},
   {productName:'Watch',price:15000,rating:3.8},
 ]
-}
 
+
+date:any = new Date();
+
+
+
+}
 

@@ -7,8 +7,13 @@
   /></span>
   <span class="input-span">
     <label for="password" class="label">Password</label>
-    <input type="password" name="password" id="password"
-  /></span>
+    <input [type]="isVisable?'text':'password'" name="password" id="password"
+  />
+
+</span>
+ <input type="checkbox" (click)="visable()" >
+ <label>Showpassword</label>
+
   <span class="span"><a href="#">Forgot password?</a></span>
   <input class="submit" type="submit" value="Log in" />
   <span class="span">Don't have an account? <a href="#">Sign up</a></span>

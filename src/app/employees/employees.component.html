@@ -1,0 +1,36 @@
+
+<h1>Employees Data</h1>
+<button (click)="bonus()" >Add 50k Bonus</button>
+<input type="text" [(ngModel)]="filterData" (keyup)="search()">
+<select [(ngModel)]="role" (change)="roleFilter()">
+  <option value="UIDeveloper">UI Developer</option>
+  <option value="Software Developer">Software Developer</option>
+  <option value="Data engineer">Data Engineer</option>
+  <option value="Testing Engineer">Testing Engineer</option>
+</select>
+
+<button (click)="sort()">Sort Experience low to high</button>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th>S No</th>
+      <th>Name</th>
+      <th>Experience</th>
+      <th>Package</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employe of employees let i=index ">
+      <td>{{i+1}}</td>
+      <td>{{employe.name | uppercase}}</td>
+      <td [ngClass]="{'red':employe.experience<=3,'purple':((employe.experience>=3.5)&&(employe.experience<6)),'green':employe.experience>=6}">{{employe.experience}}</td>
+      <td [ngStyle]="{'color':employe.package>700000?'red':'green'}">{{employe.package}}</td>
+      <td >{{employe.role}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  isVisable:Boolean=false;
+  visable(){
+    this.isVisable=!this.isVisable;
+  }
+
 }
