@@ -1,13 +1,13 @@
 
-<form class="form">
+<form class="form" [formGroup]="loginForm">
   <h1 style="padding: 10px;">LOGIN</h1>
   <span class="input-span">
     <label for="email" class="label">Email</label>
-    <input type="email" name="email" id="email"
+    <input type="email" name="email" id="email" formControlName="email"
   /></span>
   <span class="input-span">
     <label for="password" class="label">Password</label>
-    <input [type]="isVisable?'text':'password'" name="password" id="password"
+    <input [type]="isVisable?'text':'password'" name="password" id="password" formControlName="password"
   />
 
 </span>
@@ -15,6 +15,6 @@
  <label>Showpassword</label>
 
   <span class="span"><a href="#">Forgot password?</a></span>
-  <input class="submit" type="submit" value="Log in" />
-  <span class="span">Don't have an account? <a href="#">Sign up</a></span>
+  <button (click)="login()" class="btn btn-primary">Login</button>
+  <span class="span">Don't have an account? <a routerLink="/registration">Registation</a></span>
 </form>

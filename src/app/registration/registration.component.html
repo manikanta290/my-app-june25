@@ -1,0 +1,13 @@
+<h1>User Registration</h1>
+
+<form [formGroup]="registrationForm">
+  <label>Enter Your Name:</label>
+  <input type="text" formControlName="name"><br>
+  <label>Enter Your Email:</label>
+  <input type="email" formControlName="email"><br>
+  <label>Enter Your Mobile Number:</label>
+  <input type="number" formControlName="mobile"><br>
+  <label>Enter Your password:</label>
+  <input type="password" formControlName="password"><br>
+  <button (click)="register()" class="btn btn-primary">Create Account</button>
+</form>

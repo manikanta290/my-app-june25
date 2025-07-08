@@ -40,7 +40,27 @@ export class EmployeesComponent {
   bonus(){
     this.employees=this.employees.map((employe:any)=>{
       employe.package=employe.package+50000;
-      return employe;
+      return parseInt(employe);
     });
+
   }
+  totalCost(){
+    let totalCost=this.employees.reduce((sum:any,employe:any)=>sum+employe.package,0);
+    alert(totalCost);
+  }
+empName:string="";
+empExp:number=0;
+empPack:number=0;
+empRole:string="";
+add(){
+  let user={
+    name:this.empName,
+    experience:this.empExp,
+    package:this.empPack,
+    role:this.empRole
+  };
+  console.log(user);
+  this.employees.unshift(user);
+}
+
 }

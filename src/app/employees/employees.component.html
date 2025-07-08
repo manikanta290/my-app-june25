@@ -1,6 +1,19 @@
 
 <h1>Employees Data</h1>
-<button (click)="bonus()" >Add 50k Bonus</button>
+<label for="">employe Name</label>
+<input type="text"[(ngModel)]=empName>
+<label for="">Experience:</label>
+<input type="text"[(ngModel)]=empExp>
+<label for="">Package:</label>
+<input type="text"[(ngModel)]=empPack>
+<label for="">Role:</label>
+<input type="text"[(ngModel)]=empRole>
+<button (click)="add()" class="btn btn-primary">ADD employe</button>
+
+
+
+
+<button (click)="bonus()" class="btn btn-warning">Add 50k Bonus</button>
 <input type="text" [(ngModel)]="filterData" (keyup)="search()">
 <select [(ngModel)]="role" (change)="roleFilter()">
   <option value="UIDeveloper">UI Developer</option>
@@ -10,6 +23,7 @@
 </select>
 
 <button (click)="sort()">Sort Experience low to high</button>
+<button (click)="totalCost()" class="btn btn-success" >Cost to the company</button>
 <table class="table table-dark">
   <thead>
     <tr>

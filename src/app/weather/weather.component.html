@@ -1,0 +1,13 @@
+<div class="parent">
+    <div class="weather-card" *ngFor="let weathers of weather">
+        <h1>Weather in Hyderabad</h1>
+        <div class="dot"  [ngClass]="{'blue':weathers.current_weather.temperature<0,'yellow':((weathers.current_weather.temperature>=0)&&(weathers.current_weather.temperature<30)),'green':((weathers.current_weather.temperature>=30)&&(weathers.current_weather.temperature<35)),'red':weathers.current_weather.temperature>35}"></div>
+           <h1 [ngClass]="{'blue1':weathers.current_weather.temperature<0,'yellow1':((weathers.current_weather.temperature>=0)&&(weathers.current_weather.temperature<30)),'green1':((weathers.current_weather.temperature>=30)&&(weathers.current_weather.temperature<35)),'red1':weathers.current_weather.temperature>35}">
+              {{weathers.current_weather.temperature}}{{weathers.current_weather_units.temperature}}</h1>
+            <h3>wind Speed:{{weathers.current_weather.windspeed}}{{weathers.current_weather_units.windspeed}}</h3>
+             <h3>wind Direction:{{weathers.current_weather.winddirection}}{{weathers.current_weather_units.winddirection}}</h3>
+             <h3 [ngStyle]="{'color':weathers.current_weather.is_day>=1?'blue2':'green'}">{{weathers.current_weather.is_day>=1?'Daytime':'Nighttime'}}</h3>
+    </div>
+
+</div>
+

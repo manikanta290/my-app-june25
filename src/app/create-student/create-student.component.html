@@ -1,0 +1,64 @@
+<h1>Create-Student</h1>
+
+<form [formGroup]="studentForm">
+  <label for="">Name:</label>
+  <input type="text" formControlName="name"> <br>
+  <div *ngIf="studentForm.get('name')?.touched && studentForm.get('name')?.invalid">
+    <p *ngIf="studentForm.get('name')?.errors?.['required']">Name should be enter</p>
+    <p *ngIf="studentForm.get('name')?.errors?.['minlength']">Name should be minimum 6 Characters</p>
+    <p *ngIf="studentForm.get('name')?.errors?.['maxlength']">Name should be maximum 12 Characters</p>
+  </div>
+   <label for="">Email:</label>
+  <input type="text" formControlName="email"> <br>
+   <label for="">Mobile:</label>
+  <input type="number" formControlName="mobile"> <br>
+  <label for="">Age:</label>
+  <input type="number" formControlName="age"> <br>
+  <div formGroupName="address">
+  <label for="">Enter City:</label>
+  <input type="text" formControlName="city"> <br>
+   <label for="">Enter State:</label>
+  <input type="text" formControlName="state"> <br>
+   <label for="">Enter Pincode:</label>
+  <input type="number" formControlName="pin"> <br>
+
+  </div>
+
+  <label>Are you?:</label>
+  <input type="radio" formControlName="type" [value]="true">
+  <label>DayScholar</label>
+  <input type="radio" formControlName="type" [value]="false">
+  <label>Residential</label>
+  <div *ngIf="studentForm.get('type')?.value==false">
+    <label>Hostel Fee:</label>
+    <input type="number" formControlName="hostelFee"><br>
+  </div>
+  <div *ngIf="studentForm.get('type')?.value==true">
+    <label>Bus Fee:</label>
+    <input type="number" formControlName="busFee"><br>
+  </div>
+<br>
+<button class="btn btn-primary" (click)="add()">ADD card</button>
+<div formArrayName="cards">
+  <div *ngFor="let card of cardsFromArray.controls;let i =index">
+    <div formGroupName="{{i}}">
+      <h3>Card{{i+1}}</h3>
+      <label>Card Number:</label>
+      <input type="number" formControlName="number"><br>
+
+      <label>Expiry month:</label>
+      <input type="month" formControlName="expiry"><br>
+
+      <label>CVV:</label>
+      <input type="number" formControlName="cvv"><br>
+      <button (click)="delete(i)" class="btn btn-danger">Delete</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<button (click)="submit()" class="btn btn-warning">Submit</button>
+
+</form>
