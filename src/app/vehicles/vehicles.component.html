@@ -15,7 +15,7 @@
     <tr *ngFor="let vehicle of vehicles">
       <td>{{vehicle.Vehicle}}</td>
       <td>{{vehicle.color}}</td>
-      <td>{{vehicle.cost}}</td>
+      <td>{{vehicle.cost | rupee}}</td>
       <td>{{vehicle.fuel}}</td>
       <td><img src="{{vehicle.image}}" alt="" width="100px" height="100px"></td>
       <td>

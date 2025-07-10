@@ -30,6 +30,8 @@ import { ChildComponent } from './child/child.component';
 import { Sibling2Component } from './sibling2/sibling2.component';
 import { Sibling1Component } from './sibling1/sibling1.component';
 import { StarratingComponent } from './starrating/starrating.component';
+import { CapitalDirective } from './capital.directive';
+import { RupeePipe } from './rupee.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { StarratingComponent } from './starrating/starrating.component';
     ChildComponent,
     Sibling2Component,
     Sibling1Component,
-    StarratingComponent
+    StarratingComponent,
+    CapitalDirective,
+    RupeePipe
   ],
   imports: [
     BrowserModule,
