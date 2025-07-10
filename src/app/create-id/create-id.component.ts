@@ -26,7 +26,7 @@ public studentForm:FormGroup = new FormGroup({
       this._studentService.createId(this.studentForm.value).subscribe(
         (data:any)=>{
           alert("Student reccord add Successfully");
-          this._router.navigateByUrl("/dashboard/student-id");
+          this._router.navigateByUrl("/dashboard/student");
         },(error:any)=>{
           alert("Internal Server Error")
         }

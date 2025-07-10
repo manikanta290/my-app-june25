@@ -6,6 +6,7 @@
   <h3 style="padding-left: 10px;">{{flipcart.category}}</h3>
   <p style="color: blue; padding-left: 10px;">{{flipcart.title}}</p>
   <p style="color: red; padding-left: 10px;">{{flipcart.price}}</p>
-   <div class="rating">{{flipcart.rating.rate}}</div>
+   <div class="rating">  <app-starrating [rating]="flipcart.rating.rate"
+></app-starrating></div>            
 </div>
 </div>

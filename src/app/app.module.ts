@@ -25,6 +25,11 @@ import { CreateStudentComponent } from './create-student/create-student.componen
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { CreateIdComponent } from './create-id/create-id.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { StarratingComponent } from './starrating/starrating.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { RegistrationComponent } from './registration/registration.component';
     CreateStudentComponent,
     VehicleDetailsComponent,
     CreateIdComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ParentComponent,
+    ChildComponent,
+    Sibling2Component,
+    Sibling1Component,
+    StarratingComponent
   ],
   imports: [
     BrowserModule,

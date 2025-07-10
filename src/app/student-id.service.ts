@@ -9,11 +9,11 @@ export class StudentIdService {
 
   constructor(private _httpClient:HttpClient) { }
 
-    getidcard():Observable<any>{
+    getIdCard():Observable<any>{
       return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student");
     }
     createId(data:any):Observable<any>{
-    return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student");
+    return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student",data);
 
   }
   getfilteridcard(term:any):Observable<any>{

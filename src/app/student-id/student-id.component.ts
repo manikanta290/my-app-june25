@@ -9,10 +9,10 @@ import { StudentIdService } from '../student-id.service';
 export class StudentIdComponent {
        student:any[]=[];
           constructor(private _studentIdService:StudentIdService){
-           this.loadcards();
+           this.loadCards();
   }
-  loadcards(){
-     this._studentIdService.getidcard().subscribe(
+  loadCards(){
+     this._studentIdService.getIdCard().subscribe(
       (data:any)=>{
         console.log(data);
         this.student=data;
@@ -67,7 +67,7 @@ export class StudentIdComponent {
   this._studentIdService.deleteCard(id).subscribe(
      (data:any)=>{
         alert("Record deleted successfully");
-        this.loadcards();
+        this.loadCards();
       },(err:any)=>{
         alert('Internal Server Error');
       }
