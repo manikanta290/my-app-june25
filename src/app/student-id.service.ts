@@ -6,14 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StudentIdService {
-
-  constructor(private _httpClient:HttpClient) { }
+constructor(private _httpClient:HttpClient) { }
 
     getIdCard():Observable<any>{
       return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student");
     }
-    createId(data:any):Observable<any>{
-    return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student",data);
+  createStuentId(data:any):Observable<any>{
+    return this._httpClient.post("https://6128991386a213001729f9df.mockapi.io/test/v1/student",data);
 
   }
   getfilteridcard(term:any):Observable<any>{
@@ -32,5 +31,6 @@ export class StudentIdService {
     return this._httpClient.delete("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+id);
 
   }
+
 
 }

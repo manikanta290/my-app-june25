@@ -23,7 +23,7 @@ public studentForm:FormGroup = new FormGroup({
 
     submit(){
       console.log(this.studentForm.value);
-      this._studentService.createId(this.studentForm.value).subscribe(
+      this._studentService.createStuentId(this.studentForm.value).subscribe(
         (data:any)=>{
           alert("Student reccord add Successfully");
           this._router.navigateByUrl("/dashboard/student");
