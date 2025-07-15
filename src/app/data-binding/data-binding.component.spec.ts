@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DataBindingComponent } from './data-binding.component';
+import { FormsModule } from '@angular/forms'; // ✅ Import FormsModule
 
 describe('DataBindingComponent', () => {
   let component: DataBindingComponent;
@@ -8,10 +8,12 @@ describe('DataBindingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataBindingComponent ]
-    })
-    .compileComponents();
+      declarations: [DataBindingComponent],
+      imports: [FormsModule] // ✅ Include FormsModule here
+    }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(DataBindingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

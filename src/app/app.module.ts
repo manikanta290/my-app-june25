@@ -40,6 +40,7 @@ import { AboutUsModule } from './about-us/about-us.module';
     AppComponent,
     LoginComponent,
     DashboardComponent,
+    CapitalDirective,
     HomeComponent,
     PageNotFoundComponent,
     ClockComponent,
@@ -63,7 +64,7 @@ import { AboutUsModule } from './about-us/about-us.module';
     Sibling2Component,
     Sibling1Component,
     StarratingComponent,
-    CapitalDirective,
+   
     RupeePipe
   ],
   imports: [

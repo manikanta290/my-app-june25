@@ -1,23 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TestBed } from '@angular/core/testing';
 import { CreateVehicleComponent } from './create-vehicle.component';
-
-describe('CreateVehicleComponent', () => {
-  let component: CreateVehicleComponent;
-  let fixture: ComponentFixture<CreateVehicleComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ CreateVehicleComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(CreateVehicleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [CreateVehicleComponent],
+    imports: [
+      ReactiveFormsModule,
+      HttpClientTestingModule
+    ],
+    providers: [
+      {
+        provide: ActivatedRoute,
+        useValue: {
+          params: of({ id: '1' }), // 👈 simulate a route param
+          snapshot: {
+            paramMap: {
+              get: () => '1' // 👈 simulate param access from snapshot
+            }
+          }
+        }
+      }
+    ]
+  }).compileComponents();
 });

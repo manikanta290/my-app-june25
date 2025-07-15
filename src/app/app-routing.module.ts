@@ -61,8 +61,6 @@ const routes: Routes = [
   {path:'**',component:PageNotFoundComponent},//wild card layout
 
 ];
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes,{ preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
