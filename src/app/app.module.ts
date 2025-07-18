@@ -34,6 +34,11 @@ import { CapitalDirective } from './capital.directive';
 import { RupeePipe } from './rupee.pipe';
 import { AuthInterceptor } from './auth.interceptor';
 import { AboutUsModule } from './about-us/about-us.module';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { StoreModule } from '@ngrx/store';
+import { countReducer } from './store/counter.reducer';
+import { SignalsComponent } from './signals/signals.component';
 
 @NgModule({
   declarations: [
@@ -64,8 +69,11 @@ import { AboutUsModule } from './about-us/about-us.module';
     Sibling2Component,
     Sibling1Component,
     StarratingComponent,
-   
-    RupeePipe
+
+    RupeePipe,
+        AdminComponent,
+        UserComponent,
+        SignalsComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +81,8 @@ import { AboutUsModule } from './about-us/about-us.module';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AboutUsModule
+    AboutUsModule,
+    StoreModule.forRoot({counter:countReducer}, {})
   ],
   providers: [
     {
